@@ -1,5 +1,5 @@
 {% set name = "pyhdfe" %}
-{% set version = "0.1.0" %}
+{% set version = "0.1.1" %}
 
 package:
   name: {{ name|lower }}
@@ -7,12 +7,12 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 820a40722d70e94cec1dcd140d6c480f02578fee96660b722a2e722c2222e377
+  sha256: 7befabd2ea1f671fb02fe454c843aff96664d874af14ce4c270264c98d4f856c
 
 build:
   noarch: python
   number: 0
-  script: "{{ PYTHON }} -m pip install . -vv"
+  script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
   host:
@@ -39,7 +39,7 @@ about:
   license: MIT
   license_family: MIT
   license_file: LICENSE.txt
-  summary: 'Algorithms for absorbing high dimensional fixed effects.'
+  summary: Algorithms for absorbing high dimensional fixed effects.
   doc_url: https://pyhdfe.readthedocs.io/
   dev_url: https://github.com/jeffgortmaker/pyhdfe
 
