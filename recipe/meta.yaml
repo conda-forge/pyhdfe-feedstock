@@ -1,5 +1,5 @@
 {% set name = "pyhdfe" %}
-{% set version = "0.1.1" %}
+{% set version = "0.2.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 7befabd2ea1f671fb02fe454c843aff96664d874af14ce4c270264c98d4f856c
+  sha256: 8cddc5f5a09148d3281fca3c787146a85ecc5a7517be3ae5762bfe507907b7fb
 
 build:
   noarch: python
