@@ -6,20 +6,20 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
   sha256: 8cddc5f5a09148d3281fca3c787146a85ecc5a7517be3ae5762bfe507907b7fb
 
 build:
   noarch: python
-  number: 0
+  number: 1
   script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
   host:
-    - python >=3.6
+    - python {{ python_min }}
     - pip
   run:
-    - python >=3.6
+    - python >={{ python_min }}
     - numpy >=1.17
     - scipy >=1.0
 test:
@@ -31,6 +31,7 @@ test:
     - pyhdfe.version
   requires:
     - pip
+    - python {{ python_min }}
   commands:
     - pip check
 
